@@ -3,6 +3,13 @@ def test_multiplication():
     five = Dollar(amount=5)
     five.times(multiplier=2)
     assert 10 == five.amount
+def test_multiplication():
+    # test that you can multiply a Dollar by a number and get the right amount.
+    five = Dollar(5)
+    five.times(2)
+    assert 10 == five.amount
+
+# If we rewrite the 10 as 5 * 2, the duplication becomes more evident.
 class Dollar:
     def __init__(self, amount):
         pass
@@ -10,4 +17,4 @@ class Dollar:
     def times(self, multiplier):
         pass
 
-    amount = 10
+    amount = 5 * 2
