@@ -7,9 +7,9 @@ def test_multiplication():
     # test that you can multiply a Dollar by a number and get the right amount.
     five = Dollar(5)
     ten = five.times(2)
-    assert 10 == ten.amount 
+    assert Dollar(10) == ten 
     fifteen = five.times(3)
-    assert 15 == fifteen.amount
+    assert Dollar(15) == fifteen
 
 def test_equality():
     assert Dollar(5) == Dollar(5)
