@@ -20,7 +20,7 @@ def test_franc_multiplication():
     assert Franc(15) == five.times(3)
 class Money:
     pass 
-class Dollar:
+class Dollar(Money):
     def __init__(self, amount):
         self._amount = amount
     
