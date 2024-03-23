@@ -15,6 +15,4 @@ class Dollar:
         pass
     
     def times(self, multiplier):
-        pass
-
-    amount = 5 * 2
+        self.amount = 5 * 2
