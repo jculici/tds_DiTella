@@ -16,10 +16,10 @@ def test_equality():
 # If we rewrite the 10 as 5 * 2, the duplication becomes more evident.
 class Dollar:
     def __init__(self, amount):
-        self.amount = amount
+        self._amount = amount
     
     def times(self, multiplier):
-        return Dollar(self.amount * multiplier)
+        return Dollar(self._amount * multiplier)
     
     def __eq__(self, other):
-        return self.amount == other.amount
+        return self._amount == other._amount
