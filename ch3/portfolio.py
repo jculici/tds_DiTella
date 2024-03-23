@@ -18,7 +18,8 @@ def test_franc_multiplication():
     five = Franc(5)
     assert Franc(10) == five.times(2)
     assert Franc(15) == five.times(3)
-# If we rewrite the 10 as 5 * 2, the duplication becomes more evident.
+class Money:
+    pass 
 class Dollar:
     def __init__(self, amount):
         self._amount = amount
