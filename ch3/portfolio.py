@@ -30,10 +30,10 @@ class Money:
         return self._amount == other._amount and type(self) == type(other)
 
     def dollar(amount):
-        return Dollar(amount,"USD")
+        return Money(amount,"USD")
 
     def franc(amount):
-        return Franc(amount,"CHF")
+        return Money(amount,"CHF")
     
     def times(self, multiplier):
         return Money(self._amount * multiplier, self._currency)
