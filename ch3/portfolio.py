@@ -4,4 +4,5 @@ def test_multiplication():
     five.times(multiplier=2)
     assert 10 == five.amount
 class Dollar:
-    pass
+    def __init__(self, amount: int):
+        pass
