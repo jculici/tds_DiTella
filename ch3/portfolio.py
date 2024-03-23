@@ -38,6 +38,10 @@ class Dollar(Money):
     def times(self, multiplier):
         return Dollar(self._amount * multiplier)
     
-class Franc(Money):
+    _currency = "USD"
+
+class Franc(Money):   
     def times(self, multiplier):
         return Franc(self._amount * multiplier)
+
+    _currency = "CHF"
