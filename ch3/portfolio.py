@@ -27,7 +27,7 @@ class Money:
         self._currency = currency
 
     def __eq__(self, other):
-        return self._amount == other._amount and type(self) == type(other)
+        return self._amount == other._amount and self._currency == other._currency
 
     def dollar(amount):
         return Money(amount,"USD")
@@ -37,6 +37,7 @@ class Money:
     
     def times(self, multiplier):
         return Money(self._amount * multiplier, self._currency)
+    
     
 class Dollar(Money):
     def times(self, multiplier):
