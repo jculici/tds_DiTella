@@ -21,6 +21,24 @@ def test_franc_multiplication():
     five = Franc(5)
     assert Franc(10) == five.times(2)
     assert Franc(15) == five.times(3)
+def test_multiplication():
+    # test that you can multiply a Dollar by a number and get the right amount.
+    five = Money.dollar(amount=5)
+    assert Money.dollar(amount=10) == five.times(multiplier=2)
+    assert Money.dollar(amount=15) == five.times(multiplier=3)
+
+def test_franc_multiplication():
+    # test that you can multiply a Franc by a number and get the right amount.
+    five = Franc(amount=5)
+    assert Franc(amount=10) == five.times(multiplier=2)
+    assert Franc(amount=15) == five.times(multiplier=3)
+
+def test_equality():
+    assert Money.dollar(3) == Money.dollar(3)
+    assert Money.dollar(3) != Money.dollar(4)
+    assert Franc(3) == Franc(3)
+    assert Franc(3) != Franc(4)
+    assert Money.dollar(5) != Franc(5)
 
 class Money:
     def __init__(self, amount):
