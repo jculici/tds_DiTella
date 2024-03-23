@@ -17,6 +17,10 @@ def test_equality():
     assert Money.franc(3) != Money.franc(4)
     assert Money.dollar(5) != Money.franc(5)
 
+def test_currency():
+    assert "USD" == Money.dollar(1)._currency
+    assert "CHF" == Money.franc(1)._currency
+
 class Money:
     def __init__(self, amount):
         self._amount = amount
