@@ -22,26 +22,23 @@ def test_currency():
     assert "CHF" == Money.franc(1)._currency
 
 class Money:
-    def __init__(self, amount):
+    def __init__(self, amount, currency):
         self._amount = amount
+        self._currency = currency
 
     def __eq__(self, other):
         return self._amount == other._amount and type(self) == type(other)
 
     def dollar(amount):
-        return Dollar(amount)
+        return Dollar(amount,"USD")
 
     def franc(amount):
-        return Franc(amount)
-
+        return Franc(amount,"CHF")
+    
 class Dollar(Money):
     def times(self, multiplier):
-        return Dollar(self._amount * multiplier)
-    
-    _currency = "USD"
+        return Money.dollar(self._amount * multiplier)
 
 class Franc(Money):   
     def times(self, multiplier):
-        return Franc(self._amount * multiplier)
-
-    _currency = "CHF"
+        return Money.franc(self._amount * multiplier)
