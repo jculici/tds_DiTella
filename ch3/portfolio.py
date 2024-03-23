@@ -11,6 +11,10 @@ def test_multiplication():
     fifteen = five.times(3)
     assert 15 == fifteen.amount
 
+def test_equality():
+    assert Dollar(5) == Dollar(5)
+    assert Dollar(5) != Dollar(6)
+
 # If we rewrite the 10 as 5 * 2, the duplication becomes more evident.
 class Dollar:
     def __init__(self, amount):
