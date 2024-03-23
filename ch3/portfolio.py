@@ -10,4 +10,4 @@ class Dollar:
     def times(self, multiplier):
         pass
 
-    amount = None
+    amount = 10
